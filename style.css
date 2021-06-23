@@ -1,0 +1,351 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap");
+:root {
+  --font-family: "Poppins", sans-serif;
+  --font-weight-normal: 400;
+  --font-weight-semi-bold: 600;
+  --font-weight-bold: 700;
+}
+
+html {
+  font-size: 16px;
+}
+
+@media screen and (min-width: 320px) {
+  html {
+    font-size: calc(16px + 8 * ((100vw - 320px) / 880));
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  html {
+    font-size: 24px;
+  }
+}
+
+h1 {
+  font-size: 3.8416rem;
+}
+
+h1 {
+  font-size: 43.904px;
+}
+
+@media screen and (min-width: 320px) {
+  h1 {
+    font-size: calc(43.904px + 10.096 * ((100vw - 320px) / 880));
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  h1 {
+    font-size: 54px;
+  }
+}
+
+h2 {
+  font-size: 2.744rem;
+}
+
+h2 {
+  font-size: 43.904px;
+}
+
+@media screen and (min-width: 320px) {
+  h2 {
+    font-size: calc(43.904px + 10.096 * ((100vw - 320px) / 880));
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  h2 {
+    font-size: 54px;
+  }
+}
+
+h3 {
+  font-size: 1.96rem;
+}
+
+h3 {
+  font-size: 31.36px;
+}
+
+@media screen and (min-width: 320px) {
+  h3 {
+    font-size: calc(31.36px + 4.64 * ((100vw - 320px) / 880));
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  h3 {
+    font-size: 36px;
+  }
+}
+
+.card-container {
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.sum-container {
+  max-width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+:root {
+  background: linear-gradient(60deg, #29323c 0%, #485563 100%);
+}
+
+.wrapper {
+  -ms-grid-columns: 100px 50px 100px;
+      grid-template-columns: 100px 50px 100px;
+  -ms-grid-rows: 80px auto 80px;
+      grid-template-rows: 80px auto 80px;
+  -webkit-column-gap: 10px;
+          column-gap: 10px;
+  row-gap: 15px;
+  justify-items: center;
+}
+
+.grid {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[3];
+      grid-template-columns: repeat(3, 1fr);
+  row-gap: 1.5vw;
+  -webkit-column-gap: 2vw;
+          column-gap: 2vw;
+}
+
+@media (max-width: 680px) {
+  .grid {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: (1fr)[1];
+        grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+.sub-grid {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[2];
+      grid-template-columns: repeat(2, 1fr);
+  row-gap: 3px;
+  -webkit-column-gap: 1vw;
+          column-gap: 1vw;
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.cards {
+  display: -ms-grid;
+  display: grid;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  list-style: none;
+  margin: 0;
+  padding: 1%;
+  -webkit-transition: all .4s ease-in-out;
+  transition: all .4s ease-in-out;
+}
+
+.cards:hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+  -webkit-transition-duration: .75s;
+          transition-duration: .75s;
+  -webkit-transition: all .2s ease-in-out;
+  transition: all .2s ease-in-out;
+}
+
+.card {
+  background: #ffffff;
+  border-color: #676666;
+  border-radius: 0.5rem;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+          box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  overflow: hidden;
+  padding: 20% 10% 20% 10%;
+  border-width: thin;
+  border-style: solid;
+}
+
+.card_title {
+  color: #000000;
+  font-size: 1.1rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: capitalize;
+  margin: 0px;
+}
+
+.card_text {
+  color: #000000;
+  font-size: 0.875rem;
+  line-height: 1.5;
+  margin-bottom: 1.25rem;
+  font-weight: 400;
+}
+
+#weight {
+  font-size: 18px;
+  text-transform: capitalize;
+  color: #ffffff;
+  text-align: center;
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+}
+
+.page-title {
+  text-align: center;
+  color: #FBB829;
+  text-shadow: 1px 1px #695e5e;
+  text-align: center;
+  font-family: "Poppins", sans-serif;
+}
+
+.card-name {
+  font-size: 30x;
+  text-transform: uppercase;
+  color: #FBB829;
+  text-shadow: 1px 1px #695e5e;
+  text-align: center;
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+}
+
+.card-weight {
+  font-size: 26px;
+  text-transform: capitalize;
+  color: #000000;
+  text-align: center;
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+}
+
+.card-height {
+  font-size: 26px;
+  text-transform: capitalize;
+  color: #000000;
+  text-align: center;
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+}
+
+.card-abilities {
+  font-size: 26px;
+  text-transform: capitalize;
+  color: #000000;
+  text-align: center;
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+}
+
+.sub-weight {
+  font-size: 12px;
+  text-transform: capitalize;
+  color: #000000;
+  text-align: center;
+  font-family: "Poppins", sans-serif;
+}
+
+.sub-height {
+  font-size: 12px;
+  text-transform: capitalize;
+  color: #000000;
+  text-align: center;
+  font-family: "Poppins", sans-serif;
+}
+
+.sub-abilities {
+  font-size: 12px;
+  text-transform: capitalize;
+  color: #000000;
+  text-align: center;
+  font-family: "Poppins", sans-serif;
+  margin-top: 8px;
+}
+
+.weight-title {
+  font-size: 20px;
+  text-transform: capitalize;
+  color: #ffffff;
+  text-align: center;
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+}
+
+.experience-title {
+  font-size: 20px;
+  text-transform: capitalize;
+  color: #ffffff;
+  text-align: center;
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  margin-top: 3%;
+  margin-bottom: 3%;
+}
+
+#experience {
+  font-size: 18px;
+  text-transform: capitalize;
+  color: #ffffff;
+  text-align: center;
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  margin-top: 3%;
+  margin-bottom: 3%;
+}
+
+.sprites {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.sprites img {
+  min-width: 150px;
+}
+
+@media (max-width: 680px) {
+  .sprites img {
+    min-width: 250px;
+  }
+}
+
+@media (max-width: 680px) {
+  .card-container {
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .card {
+    padding: 10% 10% 10% 10% !important;
+  }
+  .sprites img {
+    min-width: 250px;
+  }
+  #weight {
+    font-size: 14px;
+  }
+  .weight-title {
+    font-size: 16px;
+  }
+  #experience {
+    font-size: 14px;
+  }
+  .experience-title {
+    font-size: 16px;
+  }
+}
+/*# sourceMappingURL=style.css.map */

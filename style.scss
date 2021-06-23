@@ -1,0 +1,357 @@
+//Decided to use Poppins as main font for this given the clean, bold look I am trying to achieve.
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap");
+:root {
+  --font-family: "Poppins", sans-serif;
+  --font-weight-normal: 400;
+  --font-weight-semi-bold: 600;
+  --font-weight-bold: 700;
+}
+
+//Start Custom PokeCSS Framework
+
+
+//Color Values for Text
+$stats:#000000; 
+$title:#FBB829;
+$subtitle: #ffffff;
+
+//Color Values for Graphics
+$card-bg: #ffffff;
+$card-border: #676666;
+
+//Responsive Font Type
+
+@function strip-unit($value) {
+  @return $value / ($value * 0 + 1);
+}
+
+
+@mixin fluid-type($min-vw, $max-vw, $min-font-size, $max-font-size) {
+  $u1: unit($min-vw);
+  $u2: unit($max-vw);
+  $u3: unit($min-font-size);
+  $u4: unit($max-font-size);
+
+  @if $u1 == $u2 and $u1 == $u3 and $u1 == $u4 {
+    & {
+      font-size: $min-font-size;
+      @media screen and (min-width: $min-vw) {
+        font-size: calc(#{$min-font-size} + #{strip-unit($max-font-size - $min-font-size)} * ((100vw - #{$min-vw}) / #{strip-unit($max-vw - $min-vw)}));
+      }
+      @media screen and (min-width: $max-vw) {
+        font-size: $max-font-size;
+      }
+    }
+  }
+}
+
+$min_width: 320px;
+$max_width: 1200px;
+$min_font: 16px;
+$max_font: 24px;
+
+html {
+  @include fluid-type($min_width, $max_width, $min_font, $max_font);
+}
+
+$mod_1: 1.4; // mobile
+$mod_2: 1.5; // desktop
+
+h1 {  
+  font-size: $mod_1*$mod_1*$mod_1*$mod_1 *1rem; 
+  @include fluid-type($min_width, $max_width, $mod_1*$mod_1*$mod_1 *$min_font, $mod_2*$mod_2*$mod_2 *$min_font);
+}
+h2 {  
+  font-size: $mod_1*$mod_1*$mod_1 *1rem; 
+  @include fluid-type($min_width, $max_width, $mod_1*$mod_1*$mod_1 *$min_font, $mod_2*$mod_2*$mod_2 *$min_font);
+}
+h3 { 
+  font-size: $mod_1*$mod_1 *1rem;
+  @include fluid-type($min_width, $max_width, $mod_1*$mod_1 *$min_font, $mod_2*$mod_2 *$min_font);
+}
+
+//Containers and Visual Encapsulator
+.card-container{
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.sum-container{
+  max-width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+
+
+//Body and Container Styles
+
+:root {
+  background: linear-gradient(60deg, #29323c 0%, #485563 100%);
+}
+.wrapper {
+  grid-template-columns: 100px 50px 100px;
+  grid-template-rows: 80px auto 80px; 
+  column-gap: 10px;
+  row-gap: 15px;
+  justify-items: center;
+
+
+}
+
+//Grid for Cards
+
+
+.grid{ 
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  row-gap: 1.5vw;
+  column-gap: 2vw;
+}
+
+@media (max-width: 680px) {
+  .grid{ 
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+}
+
+//Sub-Grid for Stats
+
+.sub-grid{ 
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  row-gap: 3px;
+  column-gap: 1vw;
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+//Set Card Layout
+.cards {
+  display: grid;
+  flex-wrap: wrap;
+  list-style: none;
+  margin: 0;
+  padding: 1%;
+  transition: all .4s ease-in-out; 
+}
+
+.cards:hover {
+  transform: scale(1.1);
+  transition-duration: .75s;
+  transition: all .2s ease-in-out; 
+}
+
+.card {
+  background:  $card-bg;
+  border-color: $card-border;
+  border-radius: 0.5rem;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  padding: 20% 10% 20% 10%;
+  border-width: thin;
+  border-style: solid;
+  
+}
+
+.card_title {
+  color: $stats;
+  font-size: 1.1rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: capitalize;
+  margin: 0px;
+}
+
+.card_text {
+  color: $stats;
+  font-size: 0.875rem;
+  line-height: 1.5;
+  margin-bottom: 1.25rem;    
+  font-weight: 400;
+}
+
+
+//Type Style Settings
+
+#weight {
+  font-size: 18px;
+  text-transform:capitalize;
+  color: $subtitle;
+  text-align: center;
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+}
+
+
+.page-title{
+  text-align:center;
+  color:$title ;
+  text-shadow: 1px 1px #695e5e;
+  text-align: center;
+  font-family: "Poppins", sans-serif;
+}
+
+
+
+.card-name{
+  font-size: 30x;
+  text-transform:uppercase;
+  color: $title;
+  text-shadow: 1px 1px #695e5e;
+  text-align: center;
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+}
+
+.card-weight{
+  font-size: 26px;
+  text-transform:capitalize;
+  color: $stats;
+  text-align: center;
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+}
+
+.card-height{
+  font-size: 26px;
+  text-transform:capitalize;
+  color: $stats;
+  text-align: center;
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+}
+
+.card-abilities{
+  font-size: 26px;
+  text-transform:capitalize;
+  color: $stats;
+  text-align: center;
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+}
+
+// Subtype Style Settings
+
+
+.sub-weight{
+  font-size: 12px;
+  text-transform:capitalize;
+  color: $stats;
+  text-align: center;
+  font-family: "Poppins", sans-serif;
+}
+.sub-height{
+  font-size: 12px;
+  text-transform:capitalize;
+  color: $stats;
+  text-align: center;
+  font-family: "Poppins", sans-serif;
+}
+
+.sub-abilities{
+  font-size: 12px;
+  text-transform:capitalize;
+  color: $stats;
+  text-align: center;
+  font-family: "Poppins", sans-serif;
+  margin-top: 8px;
+}
+
+
+.weight-title {
+  font-size: 20px;
+  text-transform:capitalize;
+  color: $subtitle;
+  text-align: center;
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+}
+
+.experience-title {
+  font-size: 20px;
+  text-transform:capitalize;
+  color: $subtitle;
+  text-align: center;
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  margin-top: 3%;
+  margin-bottom: 3%;
+}
+
+#experience {
+  font-size: 18px;
+  text-transform:capitalize;
+  color: $subtitle;
+  text-align: center;
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  margin-top: 3%;
+  margin-bottom: 3%;
+}
+
+//Sprite Graphics Styling
+
+.sprites {
+  margin-left: auto; 
+  margin-right: auto;
+}
+
+.sprites img {
+  min-width: 150px;
+}
+
+//Small @media based overrides to improve responsivenes
+
+@media (max-width: 680px) {
+.sprites img { 
+  min-width: 250px;
+}
+}
+
+@media (max-width: 680px) {
+  .card-container{
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .card{
+    padding: 10% 10% 10% 10% !important;
+  }
+
+  .sprites img { 
+    min-width: 250px;
+  }
+
+  #weight {
+    font-size: 14px;
+  }
+
+  .weight-title {
+    font-size: 16px;
+  }
+
+  #experience{
+    font-size: 14px; 
+  }
+  
+  .experience-title {
+    font-size: 16px;
+  }
+
+ 
+}
+
+  
+    
+    
+    
+
